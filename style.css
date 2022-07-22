@@ -1,0 +1,95 @@
+/* * {
+  padding: 0px;
+  margin: 0px;
+  outline: 1px solid rgb(30, 6, 241);
+  box-sizing: border-box;
+}
+*/
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.grids {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 60px auto repeat(3, 120px);
+  grid-template-areas:
+    "header menu menu menu"
+    "hero hero hero hero"
+    "main main . image"
+    "main main . extra"
+    "banner banner banner banner"
+  ;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.box--1 {
+  background-color: rgb(5, 5, 78);
+  grid-area: header;
+
+}
+.box--2 {
+  background-color: rgb(255, 0, 0);
+  grid-area: menu;
+}
+.box--3 {
+  background-color: rgb(0, 68, 255);
+  grid-area: hero;  
+}
+.box--4 {
+  background-color: rgb(4, 5, 61);
+  grid-area: main;
+}
+.box--5 {
+  background-color: rgb(0, 204, 255);
+  grid-area: image;
+  color: black;
+}
+.box--6 {
+  background-color: rgb(37, 224, 115);
+  grid-area: extra;
+  color: black;
+}
+.box--7 {
+  background-color: rgb(149, 175, 3);
+  grid-area: banner;
+  color: black;
+}
+
+/* para tablets */
+@media screen and (max-width: 760px) {
+  .grids {
+    grid-template-rows: 60px auto auto repeat(2, 120px);
+    grid-template-areas:
+      "header header header header"
+      "hero hero hero hero"
+      "menu main main main"
+      "menu banner banner banner"
+      "menu extra extra image"
+    ;
+  }
+}
+
+/* para celulares */
+@media screen and (max-width: 450px) {
+  .grids {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 60px) auto auto repeat(3, 120px);
+    grid-template-areas:
+      "header"
+      "menu"
+      "hero"
+      "main"
+      "banner"
+      "extra"
+      "image"
+    ;
+  }
+}
